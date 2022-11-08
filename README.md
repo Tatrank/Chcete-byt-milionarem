@@ -1,1 +1,1 @@
-# Chcete-byt-milionarem
+# Kdo by nechtel byt milionarem.
