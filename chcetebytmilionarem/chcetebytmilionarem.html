@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="copyright">copyright TatranDousa, a.s. 2022 - 2022</div>
+    <div class="navbar">
+        <div class="logo">
+          <div >Chcete</div>
+          <div class>být milionářem?
+          </div>
+        </div>
+        <ol class="padding">
+          <div class="skryt" onClick="menu()"><div class="menu"></div></div>
+          <li class="navigation"> <a href="#"></a></li>
+
+        </ol>
+        <a href="#" id="ba">
+        <div class="idk">
+        <div class="registrace">
+        </div>
+        <div class="prihlaseni">
+
+        </div>
+        </div>
+      </a>
+  </div>
+
+  <div class="start" onclick="triviaget(1); playSound('znelka.mp3')"> 
+            <div class="navbar">
+                <div class="logo">
+                <div >Chcete</div>
+                <div class>být milionářem?
+                </div>
+                </div>
+                <ol class="padding">
+                <div class="skryt" onClick="menu()"><div class="menu"></div></div>
+                <li class="navigation"> <a href="#"></a></li>
+
+                </ol>
+                <a href="#" id="ba">
+                <div class="idk">
+                <div class="registrace">
+                </div>
+                <div class="prihlaseni">
+
+                </div>
+                </div>
+            </a>
+            </div>
+
+            <div class="opravdustart">
+                Začít
+            </div>
+  </div>
+
+  <div class="oknonapovedy none" onclick="zmiz()"></div>
+
+    <div class="centrala">
+        <div class="postranicontajner">
+            <div class="vyhry">
+                <button id="napoveda0" type="button" class="napoveda pointer" onclick="napoveda (0)">50 na 50</button>
+                <button id="napoveda1" type="button" class="napoveda pointer" onclick="napoveda (1)">zeptat se publika</button>
+                <button  id="napoveda2" type="button" class="napoveda pointer" onclick="napoveda (2)">přítel na telefonu</button>
+            </div>
+        </div>
+        <div class="maincontajner">
+                <div class="main">
+                            <div class="otazka"></div>
+                            <div class="odpovedi">
+                                <button type="button" class="odpoved" id="0" onclick="mojeodpoved (0)"></button>
+                                <button type="button" class="odpoved" id="1" onclick="mojeodpoved (1)"></button>
+                                <button type="button" class="odpoved" id="2" onclick="mojeodpoved (2)"></button>
+                                <button type="button" class="odpoved" id="3" onclick="mojeodpoved (3)"></button>
+                            </div>
+                </div>
+                <div class="dalsiotazka" onclick="triviaget()">Další otázka</div>
+        </div>
+        <div class="postranicontajner">
+            <div class="vyhry">
+                <div class="castka" id="castka1">1 000 Kč</div>
+                <div class="castka" id="castka2">2 000 Kč</div>
+                <div class="castka" id="castka3">3 000 Kč</div>
+                <div class="castka" id="castka4">5 000 Kč</div>
+                <div class="castka" id="castka5">10 000 Kč</div>
+                <div class="castka" id="castka6">20 000 Kč</div>
+                <div class="castka" id="castka7">40 000 Kč</div>
+                <div class="castka" id="castka8">80 000 Kč</div>
+                <div class="castka" id="castka9">160 000 Kč</div>
+                <div class="castka" id="castka10">320 000 Kč</div>
+                <div class="castka" id="castka11">640 000 Kč</div>
+                <div class="castka" id="castka12">1 250 000 Kč</div>
+                <div class="castka" id="castka13">2 500 000 Kč</div>
+                <div class="castka" id="castka14">5 000 000 Kč</div>
+                <div class="castka" id="castka15">10 000 000 Kč</div>
+            </div>
+        </div>
+</div>  
+    
+    
+
+        <div class="paticka">
+
+        </div>
+
+
+</body>
+
+
+<style>
+
+.paticka {
+    width: 100%;
+    background-color: #161260;
+    height: 1000px;
+}
+
+.oknonapovedy {
+    position: absolute;
+    transform: scale(0);
+    background-color: rgb(240, 184, 0);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 30px;
+    left: 25%;
+    top: 300px;
+    width: 50%;
+    height: 50%;
+    border: 4px solid white;
+    transition-duration: 4s;
+    z-index: 20;
+    cursor: pointer;
+}
+
+
+
+
+.flex {
+    display: flex;
+    transform: scale(100%);
+}
+
+.start {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 1080px;
+    transition-duration: 4s;
+    z-index: 4;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.animace {
+    left: -100%;
+}
+
+.opravdustart {
+   background: #161260; 
+   width: 100%;
+   height: 90%;
+   padding-top: 20%;
+   justify-content: center;
+   display: flex;
+   font-size: 400%;
+   color: rgb(240, 184, 0);
+   cursor: pointer;
+}
+
+.napoveda {
+    width: 80%;
+    height: 20%;
+    background-color: rgb(240, 184, 0);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+}
+
+.none {
+ display: none;
+}
+
+.logo {
+text-transform: uppercase;
+text-align: center;
+width: fit-content;
+color: #ECE249;
+font-weight: bold;
+font-size: 36px;
+font-family: Roboto, Times, serif;
+position: relative;
+}
+
+
+.padding {
+padding: 0px;
+}
+
+
+.navbar {
+height: 150px;
+background: #161260;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-left: 100px;
+padding-right: 120px;
+}
+
+.odpovedi {
+    width: 85%;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    color: black;
+}
+
+.odpoved {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 40%;
+    height: 20%;
+    border: rgb(255, 255, 255) 3px solid;
+    background: #161260;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+.otazka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 85%;
+    height: 30%;
+    border: 4px solid rgb(255, 255, 255);
+    background: #161260;
+    color: white;
+    border-radius: 15px;
+}
+
+body {
+margin: 0px;
+padding: 0px;
+
+}
+.dalsiotazka {
+width: 100%;
+height: 50px;
+top: 150px;
+left: 50%;
+background-color: rgb(78, 76, 76);
+background-color: #161260;
+color: white;
+border-radius: 40px;
+font-size: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 10%;
+border: 4px solid rgb(255, 255, 255);
+}
+
+.centrala {
+    display: flex;
+    width: 100%;
+    height: 1200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: url(https://stars24.cz/pictures/photo/2018/07/17/1500544-93bef37917-660x371.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.main { 
+    display: flex;
+     width: 100%;
+    height: 50%;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;  
+    flex-flow: column;
+    flex-wrap: wrap;
+}
+
+.backgroundzeleny {
+    background: rgb(158, 219, 96);
+}
+
+.backgroundorange {
+    background: rgb(240, 184, 0);
+}
+
+.backgroundcerveny {
+    background: rgb(255, 91, 86);
+}
+
+.postranicontajner {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.vyhry {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    border-radius: 15px;
+    border: 4px solid rgb(255, 255, 255);
+    background: #161260;
+    color: white;
+}
+
+.castka {
+    width: 80%;
+    height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.maincontajner {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.copyright {
+    position: absolute;
+    top: 1300px;
+    left: 7%;
+}
+
+.sed {
+    background: rgb(71, 66, 66);
+}
+
+@media screen and (max-width: 540px) {
+    .centrala {
+        display: flex;
+width: 100%;
+height: 1400px;
+display: flex;
+justify-content: center;
+align-items: center;
+align-content: space-evenly;
+background: url(https://stars24.cz/pictures/photo/2018/07/17/1500544-93bef37917-660x371.jpg);
+  background-repeat: repeat;
+  background-size: auto;
+background-repeat: no-repeat;
+background-size: cover;
+flex-flow: column;
+    }
+
+    .postranicontajner {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.maincontajner {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.vyhry {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    border-radius: 15px;
+    border: 4px solid rgb(255, 255, 255);
+    background: #161260;
+    color: white;
+}
+
+.copyright {
+    position: absolute;
+    top: 1500px;
+    left: 7%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+.otazka {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 90%;
+    height: 30%;
+    border: 4px solid rgb(255, 255, 255);
+    background: #161260;
+    color: white;
+    border-radius: 15px;
+}
+
+.odpoved {
+    width: 50%;
+    height: 40%;
+
+}
+
+.opravdustart {
+    height: 150%;
+}
+
+}
+
+</style>
+<script>
+
+let obtiznost = "easy"
+let url = 'https://opentdb.com/api.php?amount=1&difficulty=' + obtiznost + '&type=multiple'
+setInterval(() => {
+    url = 'https://opentdb.com/api.php?amount=1&difficulty=' + obtiznost + '&type=multiple';
+}, 15);
+let otazka = 0
+let spravnaodpoved = 0
+let data = 0
+let spatnaodpoved1 = 0
+let spatnaodpoved2 = 0
+let spatnaodpoved3 = 0
+let pole = []
+let mix = 0
+let cislopole = 0
+const nula = document.getElementById("0")
+const jedna = document.getElementById("1")
+const dva = document.getElementById("2")
+const tri = document.getElementById("3")
+let pocitadlo = 0
+let cislospravneodpovedi = 0
+let dalsi = 1
+let pocetcastky = 0
+const napoveda0 = document.getElementById("napoveda0")
+const napoveda1 = document.getElementById("napoveda1")
+const napoveda2 = document.getElementById("napoveda2")
+let pravdanebolez = 0
+
+document.querySelector(".start").addEventListener("click", function() {
+    document.querySelector(".start").classList.add("animace")
+    document.querySelector(".opravdustart").innerHTML = " "
+})
+
+function zmiz () {
+    document.querySelector(".oknonapovedy").classList.remove("flex")
+}
+
+
+function napoveda(cislonapovedi) 
+{
+document.getElementById("napoveda" + cislonapovedi).classList.add("sed")
+document.getElementById("napoveda" + cislonapovedi).classList.remove("pointer")      
+if (cislonapovedi == 0)
+    {
+        playSound("50na50.mp3")
+        na50()
+    }
+
+else if(cislonapovedi == 1) {
+ procenta()
+}
+else if (cislonapovedi == 2) {
+    playSound("telefon.mp3")
+    kamarad()
+}
+}
+
+
+function procenta() {
+    pravdanebolez = Math.random() < 0.8
+        napoveda1.disabled = true
+        if (pravdanebolez == true)
+        document.querySelector(".oknonapovedy").innerHTML = "Diváci si myslí, že správná odpověď je: " + spravnaodpoved
+        else {
+            pravdanebolez = Math.random() < 0.5
+            if (pravdanebolez == true)  {
+                document.querySelector(".oknonapovedy").innerHTML = "Diváci si myslí, že správná odpověď je: " + spatnaodpoved1
+            }
+            else {
+                document.querySelector(".oknonapovedy").innerHTML = "Diváci si myslí, že správná odpověď je: " + spatnaodpoved2 
+            }
+        }
+        document.querySelector(".oknonapovedy").classList.add("flex")
+        napoveda1.disabled = true  
+}
+
+function kamarad() {
+    pravdanebolez = Math.random() < 0.8
+        napoveda2.disabled = true
+        if (pravdanebolez == true)
+        document.querySelector(".oknonapovedy").innerHTML = "Tvůj kamarád si myslí, že správná odpověď je: " + spravnaodpoved
+        else {
+            pravdanebolez = Math.random() < 0.5
+            if (pravdanebolez == true)  {
+                document.querySelector(".oknonapovedy").innerHTML = "Tvůj kamarád si myslí, že správná odpověď je: " + spatnaodpoved1
+            }
+            else {
+                document.querySelector(".oknonapovedy").innerHTML = "Tvůj kamarád si myslí, že správná odpověď je: " + spatnaodpoved2 
+            }
+        }
+        document.querySelector(".oknonapovedy").classList.add("flex")
+        napoveda2.disabled = true  
+}
+
+function na50 () 
+{
+    pravdanebolez = Math.random() < 0.5
+    if (cislospravneodpovedi == 0)
+            {
+                if (pravdanebolez = true) 
+                {
+                    jedna.innerHTML = " "
+                    dva.innerHTML = " "
+                    napoveda0.disabled = true
+                }
+                else 
+                {
+                    jedna.innerHTML = " "
+                    tri.innerHTML = " "
+                    napoveda0.disabled = true
+                }
+            }
+
+    else if (cislospravneodpovedi == 1)
+    {
+        if (pravdanebolez = true) 
+        {
+            nula.innerHTML = " "
+            dva.innerHTML = " "
+            napoveda0.disabled = true
+        }
+        else 
+        {
+            nula.innerHTML = " "
+            tri.innerHTML = " "
+            napoveda0.disabled = true
+        }
+    }
+
+    else if (cislospravneodpovedi == 2)
+    {
+        if (pravdanebolez = true) 
+        {
+            nula.innerHTML = " "
+            jedna.innerHTML = " "
+            napoveda0.disabled = true
+        }
+        else 
+        {
+            nula.innerHTML = " "
+            tri.innerHTML = " "
+            napoveda0.disabled = true
+        }
+    } 
+    
+    else if (cislospravneodpovedi == 3)
+    {
+        if (pravdanebolez = true) 
+        {
+            nula.innerHTML = " "
+            dva.innerHTML = " "
+            napoveda0.disabled = true
+        }
+        else 
+        {
+            nula.innerHTML = " "
+            jedna.innerHTML = " "
+            napoveda0.disabled = true
+        }
+    }  
+}
+
+
+
+
+
+setInterval(() => {
+    if (pocetcastky > 5 && pocetcastky < 10) 
+{
+    obtiznost = "medium"
+}
+   else if (pocetcastky > 10) 
+{
+    obtiznost = "hard"
+}   
+}, 15);
+
+
+setInterval(() => {
+   if (pocetcastky == 15) {
+    document.querySelector(".start").classList.remove("animace")
+                document.querySelector(".opravdustart").innerHTML = "Gratulky něco jsi konečně ve svým životě vyhrál"
+   }
+}, 15);
+
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  while (currentIndex != 0) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+
+
+
+
+
+
+
+async function getTrivia() {
+   let response = await fetch(url);
+    data = await response.json();
+   return data;
+ }
+
+
+
+
+
+
+
+async function triviaget(sed) {
+    if (dalsi == 1 || admin == "1") {
+                otazka = 0
+                spravnaodpoved = 0
+                data = 0
+                spatnaodpoved1 = 0
+                spatnaodpoved2 = 0
+                spatnaodpoved3 = 0
+                pole = []
+                mix = 0
+                pocitadlo = 0
+                dalsi = 0
+                document.getElementById(cislospravneodpovedi).classList.remove("backgroundzeleny")
+                document.getElementById(cislopole).classList.remove("backgroundzeleny")
+                document.getElementById(cislopole).classList.remove("backgroundcerveny")
+                document.getElementById(cislopole).classList.remove("backgroundorange")
+                cislospravneodpovedi = 0
+                cislopole = 0
+                        jedna.disabled = false
+                        dva.disabled = false
+                        nula.disabled = false
+                        tri.disabled = false
+                await getTrivia().then((data) => {spravnaodpoved = data["results"][0]["correct_answer"]; 
+                                                    otazka = data["results"][0]["question"];
+                                                    spatnaodpoved1 = data["results"][0]["incorrect_answers"][0]
+                                                    spatnaodpoved2 = data["results"][0]["incorrect_answers"][1]
+                                                    spatnaodpoved3 = data["results"][0]["incorrect_answers"][2]
+                                                
+                                                })
+                    document.querySelector(".otazka").innerHTML = otazka            
+                    pole = [spravnaodpoved, spatnaodpoved1, spatnaodpoved2, spatnaodpoved3]                            
+                    mix = shuffle(pole); 
+                    document.getElementById("0").innerHTML = pole[0]; 
+                    document.getElementById("1").innerHTML = pole[1];  
+                    document.getElementById("2").innerHTML = pole[2]; 
+                    document.getElementById("3").innerHTML = pole[3];
+                    for ( pocitadlo = 0; pocitadlo < 5; pocitadlo++)   {
+                        if (pole[pocitadlo] == spravnaodpoved) {
+                            cislospravneodpovedi = pocitadlo
+                        }
+                    }
+                if (sed == 1) 
+                {
+                    for (let z = 0; z < 4; z++)
+                    {
+                        document.getElementById("napoveda" + z).classList.remove("sed")
+                        document.getElementById("napoveda" + z).classList.add("pointer")
+                    }
+                }
+                document.querySelector(".dalsiotazka").classList.remove("backgroundorange") 
+                document.querySelector(".dalsiotazka").classList.remove("pointer")  
+                }                   
+}
+
+
+
+
+
+
+
+async function mojeodpoved (cislo) 
+{
+    playSound(cislo + ".mp3")
+    cislopole = parseInt(cislo)
+    document.getElementById(cislo).classList.add("backgroundorange")
+    jedna.disabled = true
+    dva.disabled = true
+    nula.disabled = true
+    tri.disabled = true
+    setTimeout( function() {
+        if (pole[cislopole] == spravnaodpoved) 
+    {
+        document.getElementById(cislo).classList.add("backgroundzeleny")
+        document.getElementById(cislo).classList.remove("backgroundorange")
+        dalsi = 1
+        document.querySelector(".dalsiotazka").classList.add("backgroundorange") 
+        document.querySelector(".dalsiotazka").classList.add("pointer")              
+        if (pocetcastky > 0) {
+            document.getElementById("castka" + pocetcastky).classList.remove("backgroundorange")    
+        }
+        pocetcastky += 1
+        document.getElementById("castka" + pocetcastky).classList.add("backgroundorange")
+    }
+        else {
+            setTimeout(function(){
+                document.querySelector(".start").classList.remove("animace")
+                document.querySelector(".opravdustart").innerHTML = "Začít"
+            }, 1500)
+            document.getElementById(cislo).classList.add("backgroundcerveny")
+            document.getElementById(cislospravneodpovedi).classList.add("backgroundzeleny")
+            dalsi = 1
+            document.getElementById("castka" + pocetcastky).classList.remove("backgroundorange") 
+            pocetcastky = 0 
+            napoveda0.disabled = false
+            napoveda2.disabled = false
+            napoveda1.disabled = false
+    }
+    }, 800)
+}
+
+function blbejedge() {
+    setTimeout(function(){
+        document.querySelector(".oknonapovedy").classList.remove("none")
+    }, 300)
+}
+
+
+function playSound(url) {
+  const audio = new Audio(url);
+  audio.play();
+}
+
+document.querySelector(".otazka").addEventListener("load",  getTrivia(), blbejedge())
+
+</script>
+</html>
